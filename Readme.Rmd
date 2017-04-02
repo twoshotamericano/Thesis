@@ -1,0 +1,20 @@
+---
+title: "Overview"
+author: "Edward Anderson"
+date: "2 April 2017"
+output: html_document
+---
+
+# Overview
+
+This is my thesis for the TU Munich. The document has been written in R Studio with the Bookdown package.
+
+The final version of the thesis can be viewed here:
+
+## Structure
+
+This github respository has been prepared in a reproducible manner. 
+
+1.    In the Analysis folder you will find all the R source files which I ran. 
+
+2.    In the Data folder you will find all the data used.
