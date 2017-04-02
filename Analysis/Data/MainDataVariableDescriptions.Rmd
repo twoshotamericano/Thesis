@@ -1,0 +1,53 @@
+---
+title: "Variable Descriptions"
+author: "Edward Anderson"
+date: "2 April 2017"
+output: html_document
+---
+
+```{r, echo=FALSE}
+MainData<-read.table("MainData",sep=",")
+```
+
+
+# The Main Data Set
+```{r setup, results='asis', echo=FALSE}
+
+
+ColumnHeadings<-names(MainData)
+
+ColumnDescriptions<-c("Identifier for a sale transaction",
+                      "Natural Logarithm of house sale price",
+                      "Sale Price in USD",
+                      "Date when Sale Transaction occurred",
+                      "Number of bedrooms in prooperty",
+                      "Number of bathrooms in property",
+                      "Number of floors in property",
+                      "Size of Living Space (sq ft)",
+                      "Total Size of Property (sq ft)",
+                      "Size of Space Above Ground Floor (sq ft)",
+                      "Year of Property Construction",
+                      "Year of Renovation",
+                      "Size of Basement (sq ft)",
+                      "Does the property have a waterfront view? (1=Yes)",
+                      "Does the property have a view? (1=Yes)",
+                      "Postcode of the property",
+                      "Has the property been renovated (1=Yes)",
+                      "Does the property have a waterfront view? (1=Yes)",
+                      "Is the zipcode found in Seattle (1=Yes)?",
+                      "How many calendar days since the property sale?",
+                      "Year of Sale",
+                      "Month of Sale (1=Jan, 12= Dec)",
+                      "Latitude of Property",
+                      "Longitude of Property")
+
+DescriptionTable<-data.frame(Headings=ColumnHeadings,
+                             Descriptions=ColumnDescriptions)
+
+knitr::kable(DescriptionTable)
+```
+
+```{r}
+rm(list=ls())
+```
+

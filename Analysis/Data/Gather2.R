@@ -5,9 +5,9 @@
 ################
 
 #Create a Data-Frame with the final data
-data2<-read.table("data2",sep=",")
+data2<-read.table("Analysis/Data/data2",sep=",")
 MainData<-data2
-write.table(MainData,file="MainData",sep=",")
+write.table(MainData,file="Analysis/Data/MainData",sep=",")
 
 #Remove the objects just added
 rm(list=ls())

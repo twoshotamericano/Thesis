@@ -6,5 +6,5 @@
 
 #setwd("./Analysis/Data")
 
-source("Gather1.R")
-source("Gather2.R")
+source("Analysis/Data/Gather1.R")
+source("Analysis/Data/Gather2.R")
