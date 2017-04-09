@@ -4,53 +4,57 @@
 # 08/04/2017
 ###############
 
-#Geocode
-library(httr)
-
 #Open the existing data-set
 data3<-read.table("Analysis/Data/MainData",sep=",")
 
-#Convert into an array
-data4<-cbind(head(data3,1)$TransactionNo,head(data3,1)$Lat,head(data3,10)$Long)
+#Load the functions
+source("Analysis/UsefulFunctions.R")
 
-#Function to contact the Google API
-geo<-function(input1,input2,input3,input4){
-  #Input1 is the latitude Information
-  #Input2 is the longitude Information
-  #Input3 is the radius of the search
-  #Input4 is the type of place we are interested in
+#Convert info into format for inputting into search
+data4<-data.frame(Lat=data3$Lat,
+                  Long=data3$Long,
+                  Dist=500,
+                  Type=rep("movie_theater|bar|night_club",21613))
 
-  #Put the inputs into dummy variables
-  #Create a list
-  loc1<-paste(input1,",",input2,sep="")
-  rad<- paste(input3)
-  typ<- input4
 
-  keyval<-"AIzaSyD-XC20diWGV_La1n-LeWn5ZPZU2PAgKrk"
+#Create the data set to hold the output
+start<-1
+end<-2
 
-  list(location=loc1,
-                        radius=rad1,
-                        #type=typ1,
-                        #keyword=keyw,
-                        key=keyval)
+data15<-rep(21,end-start+1)
 
-  #sample2<-GET("https://maps.googleapis.com/maps/api/place/nearbysearch/json",
-   #            query=Queryparameters)
+#Run the function on each record
+
+for (i in start:end) {
+  data15[i]<-geo(i,data4)
 
 }
 
 
+# Write the data to a datatable
+#APIData$SupermarketGrocery750m<-data8
+#APIData$Library750m<-data9
+#APIData$LiquorStore250m<-data10
+#APIData$DoctorDentist500m<-data11
+#APIData$DepartmentStoreShoppingMall750m<-data12
+#APIData$BusTrainTransitStation100m<-data13
+#APIData$BarNightclubMovie500m<-data14
 
+#APIData<-data.frame(Restaurants250m=data5,
+#                    Schools1000m=data6,
+#                    PoliceStation1000m=data7,
+#                    SupermarketGrocery750m=data8)
 
+#write.table(APIData,file="Analysis/Data/APIData",sep=",")
 
-
-loc1<-"-33.8670522,151.1957362"
-rad1<-"500"
-typ1<-"restaurant"
-#keyw<-"cruise"
-
-
-
-
-sample3<-content(sample2)
-sample3$results[[12]]$types[[1]]
+#Data 5 was restaurants within 250m
+#Data 6 was schools withing 1000m
+#Data 7 was police station within 1000m
+#Data 8 was supermarket or grocery store within 750m
+#Data 9 was a library within 750m
+#data10 wa a liquor store within 250m
+#data 11 is a doctor or dentist within 500m
+#data 12 is a department store or shopping mall within 750m
+#data 13 is a bus station, train station, transit station within 100m
+#data 14 is a bar or nightclub or movie theatre within 500m
+#data5<-c(0)
