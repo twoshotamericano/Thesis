@@ -42,4 +42,4 @@ data<-subset(data,select=-c(MergingCode,
                             Count) )
 
 #Write results to table
-write.table(ZillowDataSet,file="Analysis/Data/ZillowDataSetX",sep=",")
+write.table(data,file="Analysis/Data/ZillowDataSetX",sep=",")
