@@ -140,4 +140,118 @@ ReverseGeo<-function(Input1,Input2,Input3){
 #"AIzaSyD1jLcZDwCZmHl4z4oNX1Noois0oiylBbA"
 #"AIzaSyAlYIxtZhLPkF7P8Rv9Tl1yZehh4BgoZuA"
 
+#########################################################
+
+# This function parses the response from the Zillow API in list format
+
+Zillowf<-function(property) {
+
+  #Create a local variable to strore the search results
+  Output<-list(zpid=character(999),
+               AddressStreet=character(999),
+               AddressZipCode=character(999),
+               AddressCity=character(999),
+               AddressState=character(999),
+               AddressLatitude=character(999),
+               AddressLongitude=character(999),
+               UseCode=as.character(999),
+               YearBuilt=as.character(999),
+               LotSizeSqFt=as.character(999),
+               FinishedSizeSqFt=as.character(999),
+               BathroomNo=as.character(999),
+               BedroomNo=as.character(999),
+               #LastSoldDate=character(999),
+               #LastSoldPrice=character(999),
+               ZestimateAmount=as.character(999),
+               ZestimateLastUpdated=as.character(999),
+               ZestimateOneWeekChange=as.character(999),
+               ZestimateValueChange=as.character(999),
+               ZestimateValueChangeDuration=as.character(999),
+               ZestimateLowValueRange=as.character(999),
+               ZestimateHighValueRange=as.character(999),
+               ZestimateValuePercentile=as.character(999),
+               RZestimateAmount=as.character(999),
+               RZestimateLastUpdated=as.character(999),
+               RZestimateOneWeekChange=as.character(999),
+               RZestimateValueChange=as.character(999),
+               RZestimateValueChangeDuration=as.character(999),
+               RZestimateLowValueRange=as.character(999),
+               RZestimateHighValueRange=as.character(999),
+               RegionIndexValue=as.character(999),
+               RegionAttributeName=as.character(999),
+               RegionAttributeNeighbourhood=as.character(999),
+               RegionAttributeID=as.character(999))
+
+  # Loop through the list of results and place the data in appropriate place
+
+  for (k in 1:length(row.names(property))){
+
+    if (row.names(property)[k]=="zpid")
+    {Output$zpid=property[[k]]}
+
+    else if (row.names(property)[k]=="address")
+    {Output$AddressStreet=property[[k]]$street
+    Output$AddressZipCode=property[[k]]$zipcode
+    Output$AddressCity=property[[k]]$city
+    Output$AddressState=property[[k]]$state
+    Output$AddressLatitude=property[[k]]$latitude
+    Output$AddressLongitude=property[[k]]$longitude}
+
+    else if (row.names(property)[k]=="useCode")
+    {
+      Output$UseCode=property[[k]]
+    }
+
+    else if (row.names(property)[k]=="finishedSqFt")
+    {
+      Output$FinishedSizeSqFt=property[[k]]
+    }
+    else if (row.names(property)[k]=="bathrooms")
+    {
+      Output$BathroomNo=property[[k]]
+    }
+    else if (row.names(property)[k]=="bedrooms")
+    {
+      Output$BedroomNo=property[[k]]
+    }
+
+    else if (row.names(property)[k]=="zestimate")
+    {
+
+      if(length(property[[k]]$amount)!=1){Output$ZestimateAmount=property[[k]]$amount$text} else {Output$ZestimateAmount="999"}
+      Output$ZestimateLastUpdated=property[[k]]$`last-updated`
+      Output$ZestimateOneWeekChange=property[[k]]$oneWeekChange[[1]]
+      if(!is.null(property[[k]]$valueChange$text)) {Output$ZestimateValueChange=property[[k]]$valueChange$text}
+      if (!is.null(property[[k]]$valueChange$.attrs[[1]])) {Output$ZestimateValueChangeDuration=property[[k]]$valueChange$.attrs[[1]]}
+      Output$ZestimateLowValueRange=property[[k]]$valuationRange[[1]]
+      if (length(property[[k]]$valuationRange)>2) {Output$ZestimateHighValueRange=property[[k]]$valuationRange[[3]]} else {Output$ZestimateHighValueRange="999"}
+      Output$ZestimateValuePercentile=property[[k]]$percentile[[1]]
+    }
+    else if (row.names(property)[k]=="rentzestimate")
+    {
+      Output$RZestimateAmount=property[[k]]$amount$text
+      Output$RZestimateLastUpdated=property[[k]]$`last-updated`
+      Output$RZestimateOneWeekChange=property[[k]]$oneWeekChange[[1]]
+      Output$RZestimateValueChange=property[[k]]$valueChange$text
+      Output$RZestimateValueChangeDuration=property[[k]]$valueChange$.attrs[[1]]
+      Output$RZestimateLowValueRange=property[[k]]$valuationRange[[1]]
+      Output$RZestimateHighValueRange=property[[k]]$valuationRange[[3]]
+    }
+
+    else if (row.names(property)[k]=="localRealEstate")
+    {
+      Output$RegionIndexValue="999" #property[[k]][[1]]
+      Output$RegionAttributeName="999" #property[[k]][[3]][[1]]
+      Output$RegionAttributeNeighbourhood="999" #property[[k]][[3]][[3]]
+      Output$RegionAttributeID="999" #property[[k]][[3]][[2]]
+    }
+
+  }
+
+  Output
+
+
+
+}
+
 
