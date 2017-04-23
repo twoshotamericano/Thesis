@@ -9,12 +9,17 @@ output: html_document
 
 This is my thesis for the TU Munich. The document has been written in R Studio with the Bookdown package.
 
-The final version of the thesis can be viewed here:
+The final version of the thesis can be viewed here.
 
 ## Structure
 
 This github respository has been prepared in a reproducible manner. 
 
-1.    In the Analysis folder you will find all the R source files which I ran. 
+1.    In the Analysis folder you will find all the R source files which I ran. This includes:
 
-2.    In the Data folder you will find all the data used.
+   - The Useful Functions source file with all the user defined functions used.
+
+2.    In the Data folder (which is a sub-folder of Analysis) you will find:
+   
+   - All the data used
+   - The makefile used to create the data-sets

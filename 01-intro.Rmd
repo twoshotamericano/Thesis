@@ -1,21 +1,46 @@
 # Introduction {#intro}
 
-You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods).
+## Objectives of Work Performed
 
-Figures and tables with captions will be placed in `figure` and `table` environments, respectively.
+My objectives when preparing this document were:
 
-```{r nice-fig, fig.cap='Here is a nice figure!', out.width='80%', fig.asp=.75, fig.align='center'}
-par(mar = c(4, 4, .1, .1))
-plot(pressure, type = 'b', pch = 19)
-```
+1. Conduct a piece of research in a reproducible manner. In particular:
 
-Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab).
+   - Create source files so that a 3rd party could re-create the project in its entirety
+   - Use the online version control system GitHub to store Source Files and Data
+   - Produce references not only to literature but also to R packages
+   
+2. Gain familiarity with cutting edge R packages. Inlcuding:
 
-```{r nice-tab, tidy=FALSE}
-knitr::kable(
-  head(iris, 20), caption = 'Here is a nice table!',
-  booktabs = TRUE
-)
-```
+   - The R studio Interactive Development Environment (IDE)
+   - Report writing with `knitr/Pandoc` in R studio
+   - Interactive apps with the `Shiny` package 
+   - Data visualisation with `ggplot2`
+   - Enhanced Data Visualisation with `htmlwidgets`
+   - Report publishing with `RPubs` and `Bookdown`
 
-You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015].
+3. Produce a Thesis document which is:
+
+   - Hosted online and includes interactive features
+   - Combines statistics and data-science
+   - Written entirely within R studio
+
+## Work Performed
+
+I have researched the problem of predicting House Prices. In particular I have explored three approaches to building a prediction model:
+
+1. A "Classical Statistical approach" using a Linear model with complicated interaction terms (see Chapter \@ref(Classical))
+2. A "Computer-Science approach" again using a Linear model but this time fitted to an enriched data set (see Chapter \@ref(CompSci))
+3. A "Non-Classical Statistical approach" using an Interactive App to select a model (see Chapter \@ref(Interactive))
+
+The data-set used contains 21436 proeprty sale transactions from 2015 and 2016 in King County, USA (near Seattle). The data-set was hosted on the data-science site [Kaggle](). Using data from an online forum has the advantage of being able to benchmark my results against peers in the Data-Science community!
+
+## Structure of the Document
+
+The meat of the document is in Part II which contains the Statistical Models. The structure of this section is as follows:
+
+   - In Section \@ref(Research), I give a description of my Research Methodology
+   - In Section \@ref(Recap), I recap Linear Models
+   - In Section \@ref(Classical), I perform a Linear Statistical Model fitting procedure
+   - In Section \@ref(CompSci), I again perform a Linear Model fitting procedure but also significant data-engineering as a preliminary step
+   - In Section \@ref(Interactive), I provide an interactive model using a Shiny App 

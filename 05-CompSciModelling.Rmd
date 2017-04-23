@@ -1,4 +1,4 @@
-# Applications
+# Computer Science Approach {#CompSci}
 
 Some _significant_ applications are demonstrated in this chapter.
 

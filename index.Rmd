@@ -11,24 +11,19 @@ link-citations: yes
 github-repo: rstudio/bookdown-demo
 description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
 ---
+# (PART) Introduction {-}
+# Preliminaries
 
-# Prerequisites
+## Source Files for Reproducibility
 
-This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports, e.g., a math equation $a^2 + b^2 = c^2$.
+This project has been written using the R package `Bookdown`. For reproducibility, all source files and data are available on my GitHub repository [here](https://github.com/twoshotamericano/Thesis). To recreate this document just clone the repository and save it in the Thesis folder at the following location `C:/ThesisSource/Thesis`.
 
-For now, you have to install the development versions of **bookdown** from Github:
+## Session info for Reproducibility
 
-```{r eval=FALSE}
-devtools::install_github("rstudio/bookdown")
+The R session info when compiling this book is shown below:
+
+```{r SessionInfo, echo=FALSE}
+sessionInfo()
+
 ```
 
-Remember each Rmd file contains one and only one chapter, and a chapter is defined by the first-level heading `#`.
-
-To compile this example to PDF, you need to install XeLaTeX.
-
-```{r include=FALSE}
-# automatically create a bib database for R packages
-knitr::write_bib(c(
-  .packages(), 'bookdown', 'knitr', 'rmarkdown'
-), 'packages.bib')
-```
