@@ -1,5 +1,56 @@
 # (PART) Statistical Modelling {-}
-# Research Methods {#Research}
+# Microsoft Analytics Tool {#Research}
+
+Have you seen the film the "Big Short"? It is a great movie and highlights many major failings of the US sub-prime mortgage industry. The main villains are the fast living, money grabbing Investment bankers from New York. However the Credit Rating Agencies, quasi-governmental organisations manadated to defend investors from poor quality investments, were revealed as partners in crime.
+
+Rating Agencies are weird businesses. If you imagine the the glitzy sky-scraper offices of Investment Banks then you are also correctly picturing a Rating Agency. But unlike Investment Banks which rely on the best brains to continuously generate new business, Rating Agencies do not generate any new business. They simply provide a financial health check service which is a legal requirement for many Institutional Investors.
+
+So the story I want to guide you through goes something like this. A mortgage is a very large loan made by a lending business to individuals purchasing a home. The mortgage typically represents 3-5 times the salary of the borrower and can take up to 50 years to repay! Investors in mortgage lending businesses are clearly motivated to make sure these repayments happen. To this end, they can obtain a financial health check from a Rating Agency. What has this got to do with Microsoft Analytics tools?
+
+One of the "Big Three Credit Ratings Agencies" a company called Fitch Ratings Inc developed a health check tool. They wanted to provide a free-to-download tool that runs on the Microsoft Excel desktop-package. Their objective was to make the tool perform the complex calculations so that the user can focus on their investment questions: can the customer afford to repay his loan and what is the resale value of the property. OK! But why do we care about this tool?
+
+Whilst not every Microsoft analytics tool looks like what follows. I am putting this tool under the spotlight as a "best in class" Microsoft product. Why? Well, if you imagine a financial servicse company making a huge amount of cash and employing over 2000 analysts, then its models should be be pretty high quality. Right?
+
+On its website Fitch describes its tool as:
+
+-    The tool provides "An Analytical model that helps with the risk assessment of Residential Mortgage loans". 
+-    The "sustainable home price model" is used to determine the true value of a property. A sustainable long-term house price is calculated based on six key drivers identified through regression anaysis on a data-set from 1976-2011.
+-    The "Probability of Default model" uses a regression-based analysis to estimate the probability that a customer stops making payments. There are 13 independent variables in the model, 11 individual loan and borrower attributes and one related to economic risk factors. The model is based on data from 1991-2009.
+
+When you click download, you'll get a zip file containing how-to documentation and a Microsoft Excel file containing the tool. 
+
+Clearly when dealing with business users, achieving user acceptance is as important as model sophistication. You can see in figure xx that Fitch achieved this: 
+
+(ref:ResiEMEA1) A screenshot of what the downloaded .zip file contains. Figure a.) Shows the individual files including user guides but also two excel tools. b.) The Datatape tool c.) The data template and d.) The Model tool
+
+```{r,echo=FALSE, fig.cap='(ref:ResiEMEA1)'}
+knitr::include_graphics("Analysis/Images/ResiEMEA1.png")
+```
+
+
+For business users with limited I.T. credentials, an Excel desktop tool requires installing no new software nor specialist training. It also contains no external data links so there are no issues regarding data security. Whilst the download does contain easy to read documentation, the tool guides the user through the analysis in a self-explanatory way using a pop-up "wizard" application.
+
+As with all calculation engines, Fitch's tool requires data in a specific format. If you look at the figures xx xx, you will see a number of data validation and certification steps. 
+
+(ref:ResiEMEA2) Screenshots of the wizard guiding the user through four data validation steps
+
+```{r,echo=FALSE, fig.cap='(ref:ResiEMEA2)'}
+knitr::include_graphics("Analysis/Images/ResiEMEA2.png")
+```
+
+
+This is actually the reason why a pop-up wizard was required.Unfortunately there is no inbuilt wizard within Microsoft Desktop products and an enhancement is required to create one. This requires the support of a software development.
+
+I mentioned above that there are two key models in the tool. The "sustainable home price model" calculates property resale values. Whilst this was sold to us as a "regression model" using six factors, it ends up being an accounting based calculation with just two adjustments! What has gone wrong?
+
+I think the critical flaw in this tool is a reliance on software developers to build the Wizard. For sure the professional looking and robust tool is a credit to the quality of the software team. Business users would never have been able to specify something so clean, nor would the analytics team ever have had the skills to build it! 
+
+However building successful analytics tools takes many iterations and much time. You will never get correctly specified requirements from business users until they have seen the first product release! Software developers are precious resources which are either no longer available or too expensive for these later iterations. So all you ever get is a first release and in this case the calculation engine was highly simplified!  
+
+Lets re-cap. We started with technical documentation describing a regression based calculation engine. This engine was wrapped up in a desktop tool "Microsoft Excel" for user acceptance purposes. A data validation process is a key preliminary step to running the model and a custom wizard guides users through this process. This wizard would have been built by a software development team. Finally we reviewed the "home price" calcualtion component and found that it was much less sophiticated than we were expecting. A reliance on specialised software developers was identified as a cause of this simplification.
+
+
+
 
 ## Research Methodology
 
