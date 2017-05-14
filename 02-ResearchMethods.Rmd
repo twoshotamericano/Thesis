@@ -43,6 +43,13 @@ This is actually the reason why a pop-up wizard was required.Unfortunately there
 
 I mentioned above that there are two key models in the tool. The "sustainable home price model" calculates property resale values. Whilst this was sold to us as a "regression model" using six factors, it ends up being an accounting based calculation with just two adjustments! What has gone wrong?
 
+(ref:ResiEMEA3) Screenshot of the resale value calculation
+
+```{r,echo=FALSE, fig.cap='(ref:ResiEMEA3)'}
+knitr::include_graphics("Analysis/Images/ResiEMEA3.png")
+```
+
+
 I think the critical flaw in this tool is a reliance on software developers to build the Wizard. For sure the professional looking and robust tool is a credit to the quality of the software team. Business users would never have been able to specify something so clean, nor would the analytics team ever have had the skills to build it! 
 
 However building successful analytics tools takes many iterations and much time. You will never get correctly specified requirements from business users until they have seen the first product release! Software developers are precious resources which are either no longer available or too expensive for these later iterations. So all you ever get is a first release and in this case the calculation engine was highly simplified!  
