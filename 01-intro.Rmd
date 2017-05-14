@@ -1,46 +1,13 @@
-# Introduction {#intro}
+# Prologue {#prologue}
 
-## Objectives of Work Performed
+Good Morning! How are you doing? It's been great being part of the Analytical Community the last few years hasn't it? The excitement is everywhere about "big-data","data-science","MOOCs". I have been blown away by the talent being attracted into Analytics.One current trend is 'a shift from a desire to work for bigger name brand companies like Facebook or Google, to more mission-driven organizations attempting to make an impact on society. Whether it is curing cancer, conserving energy, tracking infectious disease or personalizing education, more data scientists are becoming interested in trying to make the world a  better place'.http://www.kdnuggets.com/2016/07/4-trends-disrupting-data-science-market.html
 
-My objectives when preparing this document were:
+My name is Edward Anderson and I like to play with financial models. For me it's always been about big ideas and models are a way to bring these ideas to life. Over the next 60 pages, please imagine yourself with me in the bright Spring of 2012 in the historic University City of Cambridge UK. I am a science-grad and Analyst at a financial services start-up business that had just completed a major acquisition. Our offices overlooking leafy Cambridge colleges are buzzing with energy as new colleagues join and information flows are gushing in all directions.In six weeks time we begin managing over €330m of customer accounts.
 
-1. Conduct a piece of research in a reproducible manner. In particular:
+I was short of real-world experience but am about to become the Analytics Lead at our new Asset Management business. For the last three years I had been developing new models to understand how businesses operated. In-time I had the opportunity to work closely with a number of highly talented Executives and ultimately to my new promotion. I am full of new ideas but my to-do list is already too long and I am meeting everyday with new managers eager for support. Looking over my shoulder, what advice would you give to deliver impactful analytics on a tight time budget?
 
-   - Create source files so that a 3rd party could re-create the project in its entirety
-   - Use the online version control system GitHub to store Source Files and Data
-   - Produce references not only to literature but also to R packages
-   
-2. Gain familiarity with cutting edge R packages. Inlcuding:
+In the next forty-five minutes, you will walk out with my go-to-guide to using models to positively impact running a business!  My core message to you is that there are mutliple success factors and a kick-ass model is only one of them. As my CEO and mentor counselled me back in 2012 "the ops guys on the ground desperately need help. But the way to do this is a balancing act. You need to simulatenously listen to suggestions and keep people engaged whilst also driving discussions forward. By all means use models as a focal point".
 
-   - The R studio Interactive Development Environment (IDE)
-   - Report writing with `knitr/Pandoc` in R studio
-   - Interactive apps with the `Shiny` package 
-   - Data visualisation with `ggplot2`
-   - Enhanced Data Visualisation with `htmlwidgets`
-   - Report publishing with `RPubs` and `Bookdown`
+Why am I writing now? Recently, I have been working with two open-source analytics tools/methods, "reproducible-research" and "R-studio".These belong to the Academic research community but were recently enhanced into a compelling commercial product and alternative to Microsoft. I will prove this to you by answering three questions, how do models help businesses meet strategic goals? What does a Microsoft analytics tool look like and what are its short-comings? What does an Open-Source alternative look like?
 
-3. Produce a Thesis document which is:
 
-   - Hosted online and includes interactive features
-   - Combines statistics and data-science
-   - Written entirely within R studio
-
-## Work Performed
-
-I have researched the problem of predicting House Prices. In particular I have explored three approaches to building a prediction model:
-
-1. A "Classical Statistical approach" using a Linear model with complicated interaction terms (see Chapter \@ref(Classical))
-2. A "Computer-Science approach" again using a Linear model but this time fitted to an enriched data set (see Chapter \@ref(CompSci))
-3. A "Non-Classical Statistical approach" using an Interactive App to select a model (see Chapter \@ref(Interactive))
-
-The data-set used contains 21436 proeprty sale transactions from 2015 and 2016 in King County, USA (near Seattle). The data-set was hosted on the data-science site [Kaggle](). Using data from an online forum has the advantage of being able to benchmark my results against peers in the Data-Science community!
-
-## Structure of the Document
-
-The meat of the document is in Part II which contains the Statistical Models. The structure of this section is as follows:
-
-   - In Section \@ref(Research), I give a description of my Research Methodology
-   - In Section \@ref(Recap), I recap Linear Models
-   - In Section \@ref(Classical), I perform a Linear Statistical Model fitting procedure
-   - In Section \@ref(CompSci), I again perform a Linear Model fitting procedure but also significant data-engineering as a preliminary step
-   - In Section \@ref(Interactive), I provide an interactive model using a Shiny App 
