@@ -10,4 +10,5 @@ In the next forty-five minutes, you will walk out with my go-to-guide to using m
 
 Why am I writing now? Recently, I have been working with two open-source analytics tools/methods, "reproducible-research" and "R-studio".These belong to the Academic research community but were recently enhanced into a compelling commercial product and alternative to Microsoft. I will prove this to you by answering three questions, how do models help businesses meet strategic goals? What does a Microsoft analytics tool look like and what are its short-comings? What does an Open-Source alternative look like?
 
+ok
 

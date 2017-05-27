@@ -35,7 +35,7 @@ The traditional approach to product segmentation is much less granular.
 Porter summarised three distinct approaches: The Low Cost, Differentiation and Focus strategies. Each order of the Low Cost product is produced using the same technology, irregardless of the customer need. 
 
 
-figures gfgf
+figures this is a new figure
 
 The key enabler of mass customisation is an ability to quickly and cheaply customise production technology to an individual order. This massively increases the ability to produce a wide variety of services at low cost
 
