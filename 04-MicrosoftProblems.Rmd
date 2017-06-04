@@ -8,7 +8,7 @@ In this section I want to follow the thought process of the conservative (dare I
 
 Microsoft has organised its Business Software using a modular strategy. Each unit (or module) of software performs a distinct function and is designed to operate both independently but also in an integrated whole if needed. This is achieved through providing high quality interfaces between modules, enabling easy connection and communication.
 
-Microsoft's product strategy is not the same for each software module. On the one side, Microsoft offers its Office Products (eg. Excel, Word, Powerpoint, Access) using a Low Cost strategy to ensure mass market appeal and affordability. On the other side, Microsoft offers a suite of Advanced Analytics Products (eg. SQL Management Studio, Analysis Services, Reporting Services...) using a Focus Strategy to deliver enhanced features but at significant additional cost to the user.
+Microsoft's product strategy is not the same for each software module. On the one side, Microsoft offers its Office Products (eg. Excel, Word, Powerpoint, Access) using a Low Cost strategy to ensure mass market appeal and affordability. On the other side, Microsoft offers a suite of Advanced Analytics Products (eg. SQL Management Studio, Analysis Services, Reporting Services...) using a Differentiation Strategy to deliver enhanced features but at significant additional cost to the user.
 
 So if a customer needs an Excel based tool with functionality to analyse data in an online transactional database, both Low Cost and High Cost modules must be purchased. If we analyse this approach using the trade-off curves of the previous section it is obviously not mass customisation:
 
@@ -25,7 +25,7 @@ In words, the Microsoft modular approach meets enhanced customer requirements by
 
 The key theme of this thesis is that we need R Studio to unlock "Mass Customisation" in Business Analytics.We've seen that Microsoft uses a modular system for its Business Software, relying on high quality interfaces to ensure interoperability. We have also seen that this is conceptually different to Mass Customisation. In this section we will see an example of why this difference matters!
 
-Whilst not every Microsoft analytics tool looks like what follows. I am putting this tool under the spotlight as a "best in class" Microsoft product. Why? Well, if you imagine a financial servicse company making a huge amount of cash and employing over 2000 analysts, then its models should be be pretty high quality. Right?
+Whilst not every Microsoft analytics tool looks like what follows. I am putting this tool under the spotlight as a "best in class" Microsoft product. Why? Well, if you imagine a financial services company making a huge amount of cash and employing over 2000 analysts, then its models should be be pretty high quality. Right?
 
 ### Background to the Case Study
 

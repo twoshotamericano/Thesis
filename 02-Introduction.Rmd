@@ -4,6 +4,6 @@
 
 What advice would you give me to deliver a wide range of powerful analytics on a  tight time budget? Well, I believe the answer is to use the R Studio system. I believe this doubly as I recognise R Studio as a "Mass Customisation Technology" from my studies at Business School.
 
-In this section I introduce the key concepts of Mass Customisation. Since it almost guaranteed the haters of R studio will be lovers of Microsoft, I present a case study of why Microsoft will never work. I then present an overview of the R Studio system for Analytics.
+In this section I introduce the key concepts of Mass Customisation. Since it is almost guaranteed the haters of R studio will be lovers of Microsoft, I present a case study of why Microsoft will never work. I then present an overview of the R Studio system for Analytics.
 
 
