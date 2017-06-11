@@ -1,5 +1,95 @@
-# Interactive Approach {#Interactive}
-# Research Methodology
+# Data Enhancements
+
+```{r, eval=FALSE,echo=TRUE}
+################
+# R source file created to complete the data gathering process
+# Created by Ed Anderson
+# 19/03/2017
+################
+
+
+################
+# Extract information from kaggle
+# Input File is kc_house_data.csv
+# Output File is data2
+################
+
+source("Analysis/Data/Gather1.R")
+
+################
+# Relabel are re-order the columns
+# Input Files is data2
+# Output File is MainData
+################
+
+source("Analysis/Data/Gather2.R")
+
+################
+# Enrich the data-set with GoogleData
+# Input File is MainData
+# Output file is API Data
+################
+
+##source("Analysis/Data/Gather3.R")
+
+################
+# Enrich the data-set with ZillowData
+# Input File are Address Data and Main Data
+# Output File is ZillowDataX
+################
+
+source("Analysis/Data/ZillowAPICalls.R")
+source("Analysis/Data/ZillowAPICalls2.R")
+
+################
+# Impute values for the gaps in the Zillow Data
+# Input file is ZillowDataX
+# Output file is ZillowDataX
+################
+
+source("Analysis/Data/ZillowAPICalls3.R")
+
+################
+# Produce a final enriched data file
+# Various Input Files
+# Output FIle is Enriched Data
+################
+
+
+```
+
+## Extensions of the Data
+```{r, echo=FALSE}
+
+library(DT)
+
+MainData<-read.table("Analysis/Data/MainData",sep=",",stringsAsFactors = FALSE,nrows=100)
+
+EnrichedData<-read.table("Analysis/Data/EnrichedData",sep=",",stringsAsFactors = FALSE,nrows=100)
+
+
+
+```
+
+This is what the old data table looked like:
+
+```{r}
+
+DT::datatable(MainData)
+
+```
+
+
+This is what the extended data table looks like:
+
+```{r}
+
+DT::datatable(EnrichedData)
+
+```
+
+
+## Research Methodology
 
 My goal was to use a multiple linear regression model to accurately predict house prices. The starting point of my research was a sample data set from the website [kaggle](). The data contains property sales prices for transactions between May 2014 and May 2015 in King County USA which includes Seattle.
 
@@ -71,10 +161,15 @@ The table below shoes the micro-variables identified online, the reference artic
 
 
 
-# Computer Science Approach {#CompSci}
+### Computer Science Approach {#CompSci}
 
 Some _significant_ applications are demonstrated in this chapter.
 
 ## Example one
 
 ## Example two
+
+
+
+
+

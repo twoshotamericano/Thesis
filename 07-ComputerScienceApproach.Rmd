@@ -1,0 +1,54 @@
+# Computer Science Approach
+
+(ref:Outliers1) Checking for Outliers.
+
+```{r Outliers1,echo=FALSE, fig.cap='(ref:Outliers1)',fig.align='center'}
+knitr::include_graphics("Analysis/Images/Visualization1.png")
+```
+
+(ref:Outliers1) Adjusting for Outliers.
+
+```{r Outliers2,echo=FALSE, fig.cap='(ref:Outliers1)',fig.align='center'}
+knitr::include_graphics("Analysis/Images/Vizualisation2.jpg")
+```
+
+(ref:Visualisation1) Looking for Relationships.
+
+```{r Outliers3,echo=FALSE, fig.cap='(ref:Outliers1)',fig.align='center'}
+knitr::include_graphics("Analysis/Images/Visualisation3.jpg")
+```
+
+(ref:DataExploration1) Revisiting the Data.
+
+```{r DataExploration1,echo=FALSE, fig.cap='(ref:DataExploration1)',fig.align='center'}
+knitr::include_graphics("Analysis/Images/Exploratory1.jpg")
+
+knitr::include_graphics("Analysis/Images/Exploratory2.jpg")
+
+knitr::include_graphics("Analysis/Images/Exploratory3.jpg")
+
+knitr::include_graphics("Analysis/Images/Exploratory4.jpg")
+
+knitr::include_graphics("Analysis/Images/Exploratory5.jpg")
+
+knitr::include_graphics("Analysis/Images/Exploratory6.jpg")
+
+```
+
+```{r DataExploration2,echo=FALSE, fig.cap='(ref:DataExploration1)',fig.align='center',out.width='40%'}
+knitr::include_graphics("Analysis/Images/Exploratory7.jpg")
+```
+
+
+
+(ref:ModelFit1) Looking for Poor Model Fit.
+
+```{r ModelFit1,echo=FALSE, fig.cap='(ref:ModelFit1)',fig.align='center'}
+knitr::include_graphics("Analysis/Images/Plot25.jpg")
+```
+
+(ref:ModelFit2) Looking for Poor Model Fit.
+
+```{r ModelFit2,echo=FALSE, fig.cap='(ref:ModelFit2)',fig.align='center'}
+knitr::include_graphics("Analysis/Images/Plot19.jpg")
+```

@@ -1,29 +1,14 @@
 --- 
-title: "A Minimal Book Example"
-author: "Yihui Xie"
+title: "R Studio: A 3D Printer for Business Analytics"
+author: "Ed Anderson"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 output: bookdown::gitbook
 documentclass: book
-bibliography: [book.bib, packages.bib]
+bibliography: [book.bib]
 biblio-style: apalike
 link-citations: yes
 github-repo: rstudio/bookdown-demo
-description: "This is a minimal example of using the bookdown package to write a book. The output format for this example is bookdown::gitbook."
+description: "This document describes the concept of Mass Customisation as it applies to Business Analytics and provides case study implementations of R Studio."
 ---
-# (PART) Introduction {-}
-# Preliminaries
-
-## Source Files for Reproducibility
-
-This project has been written using the R package `Bookdown`. For reproducibility, all source files and data are available on my GitHub repository [here](https://github.com/twoshotamericano/Thesis). To recreate this document just clone the repository and save it in the Thesis folder at the following location `C:/ThesisSource/Thesis`.
-
-## Session info for Reproducibility
-
-The R session info when compiling this book is shown below:
-
-```{r SessionInfo, echo=FALSE}
-sessionInfo()
-
-```
 
