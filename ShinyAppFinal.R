@@ -37,6 +37,46 @@ data6<-data6[-errors,]
 #Generate the Predictions from Fitted Model
 data6$FlatFlag<-as.factor((data6$NumberOfFloors<2)*1)
 
+fit3<-lm(LogSalePrice ~
+           condition+
+           grade+
+           SeattleFlag+
+           RenovationYear+
+           TotalArea+
+           NumberOfBedrooms+
+           NumberOfBathrooms+
+           LivingSpace+
+           NumberOfBedrooms+
+           #NumberOfFloors+
+           ConstructionYear+
+           WaterfrontView+
+           SeattleFlag+
+           #Restaurants250m+
+           Schools1000m+
+           PoliceStation1000m+
+           SupermarketGrocery750m+
+           #Library750m+
+           #LiquorStore250m+
+           DoctorDentist500m+
+           #DepartmentStoreShoppingMall750m+
+           #BusTrainTransitStation100m+
+           BarNightclubMovie500m+
+           #RZestimateHighValueRange+
+           #RZestimateAmount+
+           NumberOfFloors+
+           ConstructionYear+
+           WaterfrontView+
+           SeattleFlag+
+           #Restaurants250m+
+           Schools1000m+
+           PoliceStation1000m+
+           SupermarketGrocery750m+
+           Library750m
+         #LiquorStore250m+
+         , data=data6)
+
+data6$prediction<-predict(fit3)
+data6$prediction2<-predict(fit3)
 
 ###################
 # Map Preparation
@@ -98,18 +138,46 @@ ui<-pageWithSidebar(
      #            min = 1, max = 9)
   ),
   mainPanel(
-    plotOutput('plot1')
+    tabsetPanel(type = "tabs",
+                tabPanel("Plots",
+                         #plotOutput('plot2'),
+                         plotOutput('plot1')),
+
+                tabPanel("Summary Statistics",
+                         verbatimTextOutput("summary"),
+                         textInput("text_summary",
+                                   label = "Interpretation", value = "Enter text..."))
+
+    ))
+
+
   )
-)
+
 
 server<-function(input, output, session) {
 
-  # Combine the selected variables into a new data frame
-  prediction <- reactive({
+  par(mar=c(0,0,0,0)+0.1)
 
-    predict(lm(data6$LogSalePrice~input$xcol+input$ycol, data=data6))
+  #output$plot2 <- renderPlot({
 
+   # image(MyMap2,red="r",green="g",blue="b")
+  #  plot(data6[c("prediction")],add=TRUE, pch=1,cex=0.1,col=rw.colors(500))
+    #box()
+  #})
+
+
+  regFormula <- reactive({
+    as.formula(paste('LogSalePrice', '~', input$xcol,'+',input$ycol))
   })
+
+  # Combine the selected variables into a new data frame
+  #prediction <- reactive({
+
+  model <- reactive({
+    lm(regFormula(), data = data6)
+  })
+
+  #})
 
   #data6$prediction <- reactive({
 
@@ -119,14 +187,15 @@ server<-function(input, output, session) {
 
   rw.colors<-colorRampPalette(c("white","red"))
 
+
   output$plot1 <- renderPlot({
 
-    data6$prediction<-prediction()
+    data6$prediction2<-predict(model())
 
-    #par(mar=c(0,0,0,0)+0.1)
+    par(mar=c(0,0,0,0)+0.1)
 
-    image(MyMap2,red="r",green="g",blue="b")
-    plot(data6[c("prediction")],add=TRUE, pch=1,cex=0.1,col=rw.colors(500))
+    #image(MyMap2,red="r",green="g",blue="b")
+    spplot(data6[c("prediction2","LogSalePrice")],pch=1,cex=0.1)
     #box()
   })
 
